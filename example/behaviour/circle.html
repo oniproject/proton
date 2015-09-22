@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>behaviour-custom</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body {
+				background-color: #333333;
+				margin: 0px;
+				overflow: hidden;
+			}
+			#container {
+				width: 1003px;
+				margin-top: 50px;
+				margin-left: -501px;
+				left: 50%;
+				position: absolute;
+			}
+			#testCanvas {
+				background: #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<canvas id="testCanvas"></canvas>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r14/Stats.min.js"></script>
+		<script src="../../build/proton.js"></script>
+		<script>
+/*! @source http://purl.eligrey.com/github/color.js/blob/master/color.js*/
+"use strict";var Color=(function(){var g="string",f=function f(n,m,h,i){var j=this,l=arguments.length,k=function(p){return parseInt(p,16)};if(l<3){if(typeof n===g){n=n.substr(n.indexOf("#")+1);var o=n.length===3;n=k(n);o&&(n=(((n&3840)*4352)|((n&240)*272)|((n&15)*17)))}l===2&&(i=m);m=(n&65280)/256;h=n&255;n=n>>>16}if(!(j instanceof f)){return new f(n,m,h,i)}this.channels=[typeof n===g&&k(n)||n,typeof m===g&&k(m)||m,typeof h===g&&k(h)||h,(typeof i!==g&&typeof i!=="number")&&1||typeof i===g&&parseFloat(i)||i]},d=f.prototype,b="undefined",a="toLowerCase",c=Math,e;f.RGBtoHSL=function(p){var i=p[0],n=p[1],q=p[2];i/=255;n/=255;q/=255;var t=c.max(i,n,q),k=c.min(i,n,q),m,u,j=(t+k)/2;if(t===k){m=u=0}else{var o=t-k;u=j>0.5?o/(2-t-k):o/(t+k);switch(t){case i:m=(n-q)/o+(n<q?6:0);break;case n:m=(q-i)/o+2;break;case q:m=(i-n)/o+4;break}m/=6}return[m,u,j]};f.HSLtoRGB=function(v){var o=v[0],w=v[1],n=v[2],i,t,u,m=function(r,l,h){if(h<0){h+=1}if(h>1){h-=1}if(h<1/6){return r+(l-r)*6*h}if(h<1/2){return l}if(h<2/3){return r+(l-r)*(2/3-h)*6}return r};if(w===0){i=t=u=n}else{var j=n<0.5?n*(1+w):n+w-n*w,k=2*n-j;i=m(k,j,o+1/3);t=m(k,j,o);u=m(k,j,o-1/3)}return[i*255,t*255,u*255]};f.rgb=function(k,j,h,i){return new f(k,j,h,typeof i!==b?i:1)};f.hsl=function(o,n,j,i){var k=f.HSLtoRGB([o,n,j]),m=c.ceil;return new f(m(k[0]),m(k[1]),m(k[2]),typeof i!==b?i:1)};f.TO_STRING_METHOD="hexTriplet";f.parse=function(h){h=h.replace(/^\s+/g,"")[a]();if(h[0]==="#"){return new f(h)}var k=h.substr(0,3),j;h=h.replace(/[^\d,.]/g,"").split(",");j=h.length;while(j--){h[j]=h[j]&&parseFloat(h[j])||0}switch(k){case"rgb":return f.rgb.apply(f,h);case"hsl":h[0]/=360;h[1]/=100;h[2]/=100;return f.hsl.apply(f,h)}return null};(f.clearColors=function(){e={transparent:[0,0,0,0]}})();f.define=function(h,i){e[h[a]()]=i};f.get=function(h){h=h[a]();if(Object.prototype.hasOwnProperty.call(e,h)){return f.apply(null,[].concat(e[h]))}return null};f.del=function(h){return delete e[h[a]()]};f.random=function(k,j){typeof k===g&&(k=f.get(k))&&(k=k.getValue());typeof j===g&&(j=f.get(j))&&(j=j.getValue());var i=c.floor,h=c.random;j=(j||16777215)+1;if(!isNaN(k)){return new f(i((h()*(j-k))+k))}return new f(i(h()*j))};d.toString=function(){return this[f.TO_STRING_METHOD]()};d.valueOf=d.getValue=function(){var h=this.channels;return((h[0]*65536)|(h[1]*256)|h[2])};d.setValue=function(h){this.channels.splice(0,3,h>>>16,(h&65280)/256,h&255)};d.hexTriplet=("01".substr(-1)==="1"?function(){return"#"+("00000"+this.getValue().toString(16)).substr(-6)}:function(){var h=this.getValue().toString(16);return"#"+(new Array(h.length<6?6-h.length+1:0)).join("0")+h});d.css=function(){var h=this;return h.channels[3]===1?h.hexTriplet():h.rgba()};d.rgbData=function(){return this.channels.slice(0,3)};d.hslData=function(){return f.RGBtoHSL(this.rgbData())};d.rgb=function(){return"rgb("+this.rgbData().join(",")+")"};d.rgba=function(){return"rgba("+this.channels.join(",")+")"};d.hsl=function(){var h=this.hslData();return"hsl("+h[0]*360+","+(h[1]*100)+"%,"+(h[2]*100)+"%)"};d.hsla=function(){var h=this.hslData();return"hsla("+h[0]*360+","+(h[1]*100)+"%,"+(h[2]*100)+"%,"+this.channels[3]+")"};return f}());
+		</script>
+		<script>
+			var canvas;
+			var context;
+			var proton;
+			var renderer;
+			var emitter;
+			var stats;
+			var colors;
+			var hcolor = 0;
+			var colorBehaviour;
+			var circleBehaviour;
+			var _currentBehaviour;
+			var rouletteBehaviour;
+			var _over = false;
+			
+			Main();
+			function Main() {
+				canvas = document.getElementById("testCanvas");
+				canvas.width = 1003;
+				canvas.height = 610;
+				context = canvas.getContext('2d');
+				addStats();
+				customCircleBehaviour();
+				customRouletteBehaviour();
+				createProton();
+				createRender();
+				tick();
+			}
+			function addStats() {
+				stats = new Stats();
+				stats.setMode(2);
+				stats.domElement.style.position = 'absolute';
+				stats.domElement.style.left = '0px';
+				stats.domElement.style.top = '0px';
+				document.getElementById('container').appendChild(stats.domElement);
+			}
+			function createProton() {
+				proton = new Proton.Proton;
+				emitter = new Proton.Emitter();
+				emitter.rate = new Proton.Rate(1, .3);
+				emitter.addInitialize(new Proton.Mass(1));
+				emitter.addInitialize(new Proton.Radius(3));
+				emitter.addBehaviour(new Proton.Alpha(1, 0));
+				var color = Color.parse("hsl(" + hcolor + ", 100%, 50%)").hexTriplet();
+				colorBehaviour = new Proton.Color(color);
+				emitter.addBehaviour(colorBehaviour);
+				emitter.addBehaviour(circleBehaviour);
+				_currentBehaviour = circleBehaviour;
+				emitter.p.x = canvas.width / 2;
+				emitter.p.y = canvas.height / 2;
+				emitter.emit();
+				proton.addEmitter(emitter);
+				setInterval(function() {
+					hcolor++;
+					var color = Color.parse("hsl(" + (hcolor % 360) + ", 100%, 50%)").hexTriplet();
+					colorBehaviour.reset(color);
+				}, 100);
+			}
+			function createRender() {
+				renderer = new Proton.Renderer('canvas', proton, canvas);
+				renderer.onProtonUpdate = function() {
+					context.fillStyle = "rgba(0, 0, 0, 0.03)";
+					context.fillRect(0, 0, canvas.width, canvas.height);
+				};
+				renderer.start();
+			}
+			function customCircleBehaviour() {
+				circleBehaviour = {
+					dead : false,
+					initialize : function(particle) {
+						particle.theta = 0;
+					},
+					applyBehaviour : function(particle) {
+						if (!this.dead) {
+							particle.theta += Math.PI / 200;
+							var b = 100;
+							var a = 62.5;
+							particle.p.x = emitter.p.x + (a + b) * Math.cos(particle.theta) - b * Math.cos((a / b + 1) * particle.theta)
+							particle.p.y = emitter.p.y + (a + b) * Math.sin(particle.theta) - b * Math.sin((a / b + 1) * particle.theta)
+							if (particle.theta > Math.PI * 16 * 3) {
+								particle.dead = true;
+								_over = true;
+								changeBehaviour(rouletteBehaviour);
+							}
+						}
+					}
+				}
+			}
+			function customRouletteBehaviour() {
+				rouletteBehaviour = {
+					dead : false,
+					initialize : function(particle) {
+						particle.theta = 0;
+					},
+					applyBehaviour : function(particle) {
+						if (!this.dead) {
+							particle.theta += Math.PI / 150;
+							var a = 280;
+							var b = 392;
+							var c = 124;
+							particle.p.x = emitter.p.x + (a - b) * Math.cos(particle.theta) + c * Math.cos((a / b - 1) * particle.theta);
+							particle.p.y = emitter.p.y + (a - b) * Math.sin(particle.theta) - c * Math.sin((a / b - 1) * particle.theta);
+							if (particle.theta > Math.PI * 14 * 2) {
+								particle.dead = true;
+								_over = true;
+								changeBehaviour(circleBehaviour);
+							}
+						}
+					}
+				}
+			}
+			function changeBehaviour(be) {
+				if (_over) {
+					emitter.removeAllParticles();
+					emitter.removeBehaviour(_currentBehaviour);
+					emitter.addBehaviour(be);
+					_currentBehaviour = be;
+					_over = false;
+				}
+			}
+			function tick() {
+				requestAnimationFrame(tick);
+				stats.begin();
+				proton.update();
+				stats.end();
+			}
+		</script>
+	</body>
+</html>
