@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/util.js | Proton API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+</head>
+<body class="layout-container">
+
+<header>
+  <a href="./">Home</a>
+  <a href="identifiers.html">Identifier</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div data-ice="classWrap">
+  <h2>Class</h2>
+  <ul>
+    
+  <li data-ice="classDoc"><span><a href="class/src/behaviour/Alpha.js~Alpha.html">Alpha</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/Attraction.js~Attraction.html">Attraction</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/render/BaseRender.js~BaseRender.html">BaseRender</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Behaviour.js~Behaviour.html">Behaviour</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/BehaviourEmitter.js~BehaviourEmitter.html">BehaviourEmitter</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/render/CanvasRender.js~CanvasRender.html">CanvasRender</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/zone/CircleZone.js~CircleZone.html">CircleZone</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/Collision.js~Collision.html">Collision</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/Color.js~Color.html">Color</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/math/ColorSpan.js~ColorSpan.html">ColorSpan</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/CrossZone.js~CrossZone.html">CrossZone</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/render/DomRender.js~DomRender.html">DomRender</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/render/EaselRender.js~EaselRender.html">EaselRender</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Emitter.js~Emitter.html">Emitter</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/FollowEmitter.js~FollowEmitter.html">FollowEmitter</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/Force.js~Force.html">Force</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/Gravity.js~Gravity.html">Gravity</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/GravityWell.js~GravityWell.html">GravityWell</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Initialize.js~ImageTarget.html">ImageTarget</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/zone/ImageZone.js~ImageZone.html">ImageZone</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Initialize.js~Initialize.html">Initialize</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Initialize.js~Life.html">Life</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/zone/LineZone.js~LineZone.html">LineZone</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Initialize.js~Mass.html">Mass</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/math/Mat3.js~Mat3.html">Mat3</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Particle.js~Particle.html">Particle</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/ParticlePool.js~ParticlePool.html">ParticlePool</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/render/PixelRender.js~PixelRender.html">PixelRender</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/render/PixiRender.js~PixiRender.html">PixiRender</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/zone/PointZone.js~PointZone.html">PointZone</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/math/Polar2D.js~Polar2D.html">Polar2D</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Initialize.js~Position.html">Position</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Proton.js~Proton.html">Proton</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Initialize.js~Radius.html">Radius</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/RandomDrift.js~RandomDrift.html">RandomDrift</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Initialize.js~Rate.html">Rate</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/zone/RectZone.js~RectZone.html">RectZone</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/math/Rectangle.js~Rectangle.html">Rectangle</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/render/Renderer.js~Renderer.html">Renderer</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/Repulsion.js~Repulsion.html">Repulsion</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/Rotate.js~Rotate.html">Rotate</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/behaviour/Scale.js~Scale.html">Scale</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/math/Span.js~Span.html">Span</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/math/Vector2D.js~Vector2D.html">Vector2D</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Initialize.js~Velocity.html">Velocity</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/render/WebGLRender.js~WebGLRender.html">WebGLRender</a></span></li>
+<li data-ice="classDoc"><span><a href="class/src/Zone.js~Zone.html">Zone</a></span></li>
+</ul>
+</div>
+
+
+
+<div data-ice="functionWrap">
+  <h2><a href="function/">Function</a></h2>
+  <ul>
+    
+  <li data-ice="functionDoc"><span><a href="function/index.html#static-function-createCanvas">createCanvas</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-degreeTransform">degreeTransform</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-getImage">getImage</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-getSpanValue">getSpanValue</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-hexToRGB">hexToRGB</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-ipot">ipot</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-loadAndSetImage">loadAndSetImage</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-loadedImage">loadedImage</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-nhpot">nhpot</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-randomAToB">randomAToB</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-rgbToHex">rgbToHex</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-setSpanValue">setSpanValue</a></span></li>
+<li data-ice="functionDoc"><span><a href="function/index.html#static-function-transformDom">transformDom</a></span></li>
+</ul>
+</div>
+
+<div data-ice="variableWrap">
+  <h2><a href="variable/">Variable</a></h2>
+  <ul>
+    
+  <li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-EMITTER_ADDED">EMITTER_ADDED</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-EMITTER_REMOVED">EMITTER_REMOVED</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-EULER">EULER</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-MEASURE">MEASURE</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-PARTICLE_CREATED">PARTICLE_CREATED</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-PARTICLE_DEAD">PARTICLE_DEAD</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-PARTICLE_SLEEP">PARTICLE_SLEEP</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-PARTICLE_UPDATE">PARTICLE_UPDATE</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-POOL_MAX">POOL_MAX</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-PROTON_UPDATE">PROTON_UPDATE</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-PROTON_UPDATE_AFTER">PROTON_UPDATE_AFTER</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-RK2">RK2</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-RK4">RK4</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-TIME_STEP">TIME_STEP</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-TextureBuffer">TextureBuffer</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-TextureBuffer">TextureBuffer</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-TextureCanvasBuffer">TextureCanvasBuffer</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-TextureCanvasBuffer">TextureCanvasBuffer</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-VERLET">VERLET</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-amendChangeTabsBug">amendChangeTabsBug</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-integrator">integrator</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-pool">pool</a></span></li>
+</ul>
+</div>
+
+
+
+
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/util.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Span from &apos;./math/Span&apos;
+
+export function setSpanValue(a, b, c) {
+	if (a instanceof Span) {
+		return a
+	} else {
+		if (!b) {
+			return new Span(a)
+		} else {
+			if (!c)
+				return new Span(a, b)
+			else
+				return new Span(a, b, c)
+		}
+	}
+}
+
+export function getSpanValue(pan) {
+	if (pan instanceof Span)
+		return pan.getValue()
+	else
+		return pan
+}
+
+export function randomAToB(a, b, INT) {
+	if (!INT)
+		return a + Math.random() * (b - a )
+	else
+		return Math.floor(Math.random() * (b - a)) + a
+}
+
+var PI_180 = Math.PI / 180
+export function degreeTransform(a) {
+	return a * PI_180
+}
+
+export function hexToRGB(h) {
+	var hex16 = (h.charAt(0) == &quot;#&quot;) ? h.substring(1, 7) : h
+	var r = parseInt(hex16.substring(0, 2), 16)
+	var g = parseInt(hex16.substring(2, 4), 16)
+	var b = parseInt(hex16.substring(4, 6), 16)
+
+	return {r, g, b}
+}
+
+export function rgbToHex(rbg) {
+	return &apos;rgb(&apos; + rbg.r + &apos;, &apos; + rbg.g + &apos;, &apos; + rbg.b + &apos;)&apos;
+}
+
+export function getImage(img, particle, drawCanvas, fun) {
+	if ( typeof (img) == &apos;string&apos;) {
+		loadAndSetImage(img, particle, drawCanvas, fun)
+	} else if ( typeof (img) == &apos;object&apos;) {
+		loadAndSetImage(img.src, particle, drawCanvas, fun)
+	} else if ( img instanceof Image) {
+		loadedImage(img.src, particle, drawCanvas, fun, img)
+	}
+}
+
+export var TextureBuffer = {}
+export var TextureCanvasBuffer = {}
+
+export function loadedImage(src, particle, drawCanvas, fun, target) {
+	particle.target = target
+	particle.transform.src = src
+	if (!TextureBuffer[src])
+		TextureBuffer[src] = particle.target
+	if (drawCanvas) {
+		if (TextureCanvasBuffer[src]) {
+			particle.transform.canvas = TextureCanvasBuffer[src]
+		} else {
+			var _width = nhpot(particle.target.width)
+			var _height = nhpot(particle.target.height)
+			particle.transform.canvas = createCanvas(&apos;canvas&apos; + src, _width, _height)
+			var context = particle.transform.canvas.getContext(&apos;2d&apos;)
+			context.drawImage(particle.target, 0, 0, particle.target.width, particle.target.height)
+			TextureCanvasBuffer[src] = particle.transform.canvas
+		}
+	}
+	if (fun)
+		fun(particle)
+}
+
+export function loadAndSetImage(src, particle, drawCanvas, fun) {
+	if (TextureBuffer[src]) {
+		loadedImage(src, particle, drawCanvas, fun, TextureBuffer[src])
+	} else {
+		var myImage = new Image()
+		myImage.onload = function(e) {
+			loadedImage(src, particle, drawCanvas, fun, e.target)
+		}
+		myImage.src = src
+	}
+}
+
+export function ipot(length) {
+	return (length &amp; (length - 1)) == 0
+}
+
+export function nhpot(length) {
+	--length
+	for (var i = 1; i &lt; 32; i &lt;&lt;= 1) {
+		length = length | length &gt;&gt; i
+	}
+	return length + 1
+}
+
+export function createCanvas($id, $width, $height, $position) {
+	var element = document.createElement(&apos;canvas&apos;)
+	var position = $position ? $position : &apos;absolute&apos;
+	element.id = $id
+	element.width = $width
+	element.height = $height
+	element.style.position = position
+	element.style.opacity = 0
+	transformDom(element, -500, -500, 0, 0)
+	return element
+}
+
+export function transformDom($div, $x, $y, $scale, $rotate) {
+	var translate = &apos;translate(&apos; + $x + &apos;px, &apos; + $y + &apos;px) &apos;
+	var scale = &apos;scale(&apos; + $scale + &apos;) &apos;
+	var rotate = &apos;rotate(&apos; + $rotate + &apos;deg)&apos;
+	$div.style.WebkitTransform = translate + scale + rotate
+	$div.style.MozTransform = translate + scale + rotate
+	$div.style.OTransform = translate + scale + rotate
+	$div.style.msTransform = translate + scale + rotate
+	$div.style.transform = translate + scale + rotate
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.2.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
