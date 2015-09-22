@@ -1,4 +1,4 @@
-import * as Ease from '../src/engine/tweener/Ease'
+import * as ease from 'ease'
 import {MEASURE} from './Proton'
 
 /** @private */
@@ -30,7 +30,7 @@ export default class Behaviour {
 		 * @property {Function} easing
 		 * @default Proton.easeLinear
 		 */
-		this.easing = easing || Ease.Linear
+		this.easing = easing || ease.Linear
 
 		/** @private TODO doc */
 		this.age = 0
@@ -62,7 +62,7 @@ export default class Behaviour {
 	 */
 	reset(life = Infinity, easing) {
 		this.life = life
-		this.easing = easing || Ease.Linear
+		this.easing = easing || ease.Linear
 	}
 
 	/**

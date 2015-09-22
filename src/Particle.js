@@ -1,4 +1,4 @@
-import * as Ease from '../src/engine/tweener/Ease'
+import * as ease from 'ease'
 import Vector2D from './math/Vector2D'
 import {getSpanValue} from './util'
 
@@ -48,7 +48,7 @@ export default class Particle {
 		this.scale = 1
 		this.rotation = 0
 		this.color = null
-		this.easing = Ease.Linear
+		this.easing = ease.Linear
 
 		if (init) {
 			this.transform = {}
